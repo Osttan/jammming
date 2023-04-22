@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import SearchResults from "./components/SearchResults/SearchResults";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const mockArtists = [
+    {
+      id: 0,
+      artist: "Deep Purple",
+      songTitle: "Space Truckin'",
+      album: "Machine Head",
+    },
+    {
+      id: 1,
+      artist: "Scorpions",
+      songTitle: "Big City Nights",
+      album: "Love at First Sting",
+    },
+    {
+      id: 2,
+      artist: "Kiss",
+      songTitle: "I Love It Loud",
+      album: "Creatures of the Night",
+    },
+  ];
+
+  const mockPlayList = [
+    {
+      playlistName: "Playlist One",
+      playlistTracks: [mockArtists[0], mockArtists[1], mockArtists[2]],
+    },
+  ];
+
+  return <SearchResults mockArtists={mockArtists} />;
 }
 
 export default App;
